@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 
-import { gt, GreaterThanValidator } from './greater-than';
-import { range, RangeValidator } from './range';
+import { blacklistWords, BlacklistWordValidator } from './blacklist-word';
 
 export const CustomValidators: any = {
-  gt,
-  range
+  blacklistWords
 };
 
 const CUSTOM_FORM_DIRECTIVES = [
-  GreaterThanValidator,
-  RangeValidator
+  BlacklistWordValidator
 ];
 
 @NgModule({
