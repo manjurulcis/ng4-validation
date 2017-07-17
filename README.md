@@ -50,7 +50,7 @@ import <code> CustomValidators </code> in app.component.ts or in the app you nee
 ```
 	import { Component } from '@angular/core';
 	import { FormGroup, FormControl } from '@angular/forms';
-	import { CustomValidators } from 'ng2-validation';
+	import { CustomValidators } from 'ng4-validation';
 	
 	@Component({
 	 selector: 'app',
@@ -74,4 +74,4 @@ import <code> CustomValidators </code> in app.component.ts or in the app you nee
 ```
                     
 # Issues
-If you see any issues please create an issue on github
+If you see any issues please create an issue on Github
