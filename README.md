@@ -9,7 +9,7 @@ import { CustomFormsModule } from 'ng4-validation';
 
 This validator need an input which is an array of words named "words". See below how to use 
 
-```
+```                                                                                              
 	<input
                             name="organization_name"
                             placeholder=""
