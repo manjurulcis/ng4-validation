@@ -14,5 +14,5 @@ const CUSTOM_FORM_DIRECTIVES = [
   declarations: [CUSTOM_FORM_DIRECTIVES],
   exports: [CUSTOM_FORM_DIRECTIVES]
 })
-export class CustomFormsModule {
+export class CustomValidationModule {
 }
