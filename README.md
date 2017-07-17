@@ -23,36 +23,43 @@ Import the <code>ReactiveFormsModule</code> module in app.module.ts <br/><br/>
 import { NgModule } from '@angular/core';<br/>
 import { BrowserModule } from '@angular/platform-browser';<br/>
 import { ReactiveFormsModule } from '@angular/forms';<br/>
-import { AppComponent } from './app.component';<br/>
-@NgModule({
-    imports: [BrowserModule, ReactiveFormsModule],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent]
-})<br/>
-export class AppModule {
-}
+import { AppComponent } from './app.component';<br/><br/>
 </code>
+
+<code>@NgModule({
+    <br/>imports: [BrowserModule, ReactiveFormsModule],
+    <br/>declarations: [AppComponent],
+    <br/>bootstrap: [AppComponent]
+<br/>})</code>
+<br/><br/>
+<code>export class AppModule {} </code>
 
 <br/><br/>
 
-import <code>CustomValidators</code> in app.component.ts or in the app you need to implement<br/>
+import <code>CustomValidators</code> in app.component.ts or in the app you need to implement<br/><code>
 <code>
 import { Component } from '@angular/core';<br/>
 import { FormGroup, FormControl } from '@angular/forms';<br/>
-import { CustomValidators } from 'ng2-validation';<br/>
+import { CustomValidators } from 'ng2-validation';<br/><br/>
+<code>
 @Component({
-    selector: 'app',
-    template: require('./app.html')
-});<br/>export class AppComponent {
-    form: FormGroup;<br/>
-    words: any[] = ['this', 'that'];<br/>
-    constructor() {
-        this.form = new FormGroup({
-            field: new FormControl('', CustomValidators.blacklistWords(words))
-        });
-    }<br/>
-}<br/>
-<input type="text" formControlName="field"/><br/><p *ngIf="demoForm.from.controls.field.errors?.blacklistWords">error message</p>
+    <br/>selector: 'app',
+    <br/>template: require('./app.html')
+<br/>});
+</code>
+
+<code>export class AppComponent {
+    <br/>form: FormGroup;<br/>
+    <br/>words: any[] = ['this', 'that'];<br/>
+    <br/>constructor() {
+        <br/>this.form = new FormGroup({
+            <br/>field: new FormControl('', CustomValidators.blacklistWords(words))
+        <br/>});
+    <br/>}
+<br/>}<br/><br/></code>
+<code><input  type = "text" name = "firstName" [(ngModel)] = "person.firstName"
+              words = "blacklistedWords" blacklistWords required><br/><br/>
+     <p *ngIf="demoForm.from.controls.field.errors?.blacklistWords">error message</p>
 </code>
                     
 #Issues
