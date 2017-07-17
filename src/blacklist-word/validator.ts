@@ -9,8 +9,6 @@ export const blacklistWords = (words: string[]): ValidatorFn => {
     if (!isPresent(blacklistWords)) return null;
     if (isPresent(Validators.required(control))) return null;
 
-    console.log(words);
-
     let v = control.value.split(" ");
     let validated = false, errorWord = "";
 

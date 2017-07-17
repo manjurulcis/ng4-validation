@@ -9,15 +9,22 @@ import { CustomFormsModule } from 'ng4-validation';
 
 This validator need an input which is an array of words named "words". See below how to use 
 
-
-Add this in your package.json "ng4-validation":"^version" 
 ```
-	import { BlacklistWordValidator } from "ng2-blacklistword-validator";
-	
-	<input  type = "text" name = "firstName" [(ngModel)] = "person.firstName"
-	words = "blacklistedWords" blacklistWords required>
-	<p *ngIf="demoForm.from.controls.field.errors?.blacklistWords">error message</p>        
-``` 
+	<input
+                            name="organization_name"
+                            placeholder=""
+                            [(ngModel)] = "organization_name"
+                            class="form-control input-md"
+                            type="text"
+                            formControlName="organization_name"
+                            [words]="words"
+                            blacklistWords>
+                            
+	<div
+                            *ngIf="contactForm.controls['organization_name'].errors?.blacklistWords"
+                            class="alert alert-danger">One of the word is blacklisted
+                    </div>
+   ``` 
              
              
 # Model Driven Uses 
@@ -63,8 +70,8 @@ import <code> CustomValidators </code> in app.component.ts or in the app you nee
 	
 	<input  type = "text" name = "firstName" [(ngModel)] = "person.firstName"
 	           required>
-	  <p *ngIf="demoForm.from.controls.field.errors?.blacklistWords">error message</p>
+	  <p *ngIf="demoForm.from.controls.firstName.errors?.blacklistWords">error message</p>
 ```
                     
-#Issues
+# Issues
 If you see any issues please create an issue on github
