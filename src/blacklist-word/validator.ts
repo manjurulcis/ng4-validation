@@ -11,9 +11,21 @@ export const blacklistWords = (words: string[]): ValidatorFn => {
 
     console.log(words);
 
-    //let v: number = +control.value;
-    //return v > +blacklistWords ? null : {gt: true};
+    let v = control.value.split(" ");
+    let validated = false, errorWord = "";
 
-    return null;
+    // value not equal
+    for(let i in v) {
+      if(words.indexOf( v[i] ) > -1){
+        validated = true;
+        errorWord = i;
+        break;
+      }
+    }
+    if(!validated) return null;
+
+    return {
+      blacklistWords: true
+    };
   };
 };

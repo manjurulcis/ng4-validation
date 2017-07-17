@@ -10,7 +10,7 @@ const BLACKLIST_WORD_VALIDATOR: any = {
 };
 
 @Directive({
-  selector: '[gt][formControlName],[gt][formControl],[gt][ngModel]',
+  selector: '[blacklistWords][formControlName],[blacklistWords][formControl],[blacklistWords][ngModel]',
   providers: [BLACKLIST_WORD_VALIDATOR]
 })
 export class BlacklistWordValidator implements Validator, OnInit, OnChanges {
