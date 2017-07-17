@@ -1,6 +1,6 @@
 {
   "name": "ng4-validation",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A small validator package for Angular 2/4 to validate text field value against a list blacklist words ",
   "main": "index.js",
   "typings": "./index.d.ts",
@@ -13,10 +13,16 @@
     "url": "git+https://github.com/manjurulcis/ng4-validation.git"
   },
   "keywords": [
+    "ng2",
+    "ng2 custom validation",
+    "ng2 blacklistword",
     "ng4",
     "angular4",
     "validate",
-    "validation"
+    "validation",
+    "ng2 blacklistword",
+    "ng4 blacklistword",
+    "blacklist word Validation"
   ],
   "author": "Manzurul <haque.mdmanzurul@gmail.com>",
   "license": "MIT",
