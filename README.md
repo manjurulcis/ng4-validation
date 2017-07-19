@@ -4,7 +4,7 @@ A small validator package for Angular 2 to validate text field value against a l
 # Template Driven Uses 
 Import the module in app.module.ts 
 ```
-import { CustomFormsModule } from 'ng4-validation';
+import { CustomValidationModule } from 'ng4-validation';
 ```
 
 This validator need an input which is an array of words named "words". See below how to use 
