@@ -47,7 +47,7 @@ var BlacklistWordValidator$$1 = (function () {
     ], BlacklistWordValidator$$1.prototype, "words", void 0);
     BlacklistWordValidator$$1 = __decorate([
         _angular_core.Directive({
-            selector: '[gt][formControlName],[gt][formControl],[gt][ngModel]',
+            selector: '[blacklistWords][formControlName],[blacklistWords][formControl],[blacklistWords][ngModel]',
             providers: [BLACKLIST_WORD_VALIDATOR]
         })
     ], BlacklistWordValidator$$1);
@@ -66,10 +66,21 @@ var blacklistWords = function (words) {
             return null;
         if (isPresent(_angular_forms.Validators.required(control)))
             return null;
-        console.log(words);
-        //let v: number = +control.value;
-        //return v > +blacklistWords ? null : {gt: true};
-        return null;
+        var v = control.value.split(" ");
+        var validated = false, errorWord = "";
+        // value not equal
+        for (var i in v) {
+            if (words.indexOf(v[i]) > -1) {
+                validated = true;
+                errorWord = i;
+                break;
+            }
+        }
+        if (!validated)
+            return null;
+        return {
+            blacklistWords: true
+        };
     };
 };
 
@@ -79,20 +90,20 @@ var CustomValidators = {
 var CUSTOM_FORM_DIRECTIVES = [
     BlacklistWordValidator$$1
 ];
-var CustomFormsModule = (function () {
-    function CustomFormsModule() {
+var CustomValidationModule = (function () {
+    function CustomValidationModule() {
     }
-    CustomFormsModule = __decorate([
+    CustomValidationModule = __decorate([
         _angular_core.NgModule({
             declarations: [CUSTOM_FORM_DIRECTIVES],
             exports: [CUSTOM_FORM_DIRECTIVES]
         })
-    ], CustomFormsModule);
-    return CustomFormsModule;
+    ], CustomValidationModule);
+    return CustomValidationModule;
 }());
 
 exports.CustomValidators = CustomValidators;
-exports.CustomFormsModule = CustomFormsModule;
+exports.CustomValidationModule = CustomValidationModule;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -1,12 +1,19 @@
 {
   "name": "ng4-validation",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A small validator package for Angular 2/4 to validate text field value against a list blacklist words ",
-  "main": "index.js",
-  "typings": "./index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "tsc",
-    "test": "mocha --reporter spec"
+    "test": "karma start ./karma.conf.js",
+    "dev": "webpack-dev-server --port 4001 --watch",
+    "example": "webpack --optimize-minimize",
+    "ngc": "ngc",
+    "prerollup": "rimraf bundles",
+    "rollup": "rollup -c",
+    "prebuild": "rimraf dist",
+    "build": "npm run ngc && npm run rollup",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
