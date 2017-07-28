@@ -1,6 +1,6 @@
 {
   "name": "ng4-validation",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A small validator package for Angular 2/4 to validate text field value against a list blacklist words ",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

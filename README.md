@@ -1,5 +1,5 @@
 # ng4-validation
-A small validator package for Angular 2 to validate text field value against a list blacklist words
+A small validator package for Angular 2/4 to validate text field value against a list blacklist words
 
 # Template Driven Uses 
 Import the module in app.module.ts 
